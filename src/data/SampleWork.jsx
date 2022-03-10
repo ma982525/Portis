@@ -2,8 +2,8 @@ import one from "../Images/1x.png";
 import two from "../Images/2x.png";
 import three from "../Images/3x.png";
 import four from "../Images/5x.png";
-import five from "../Images/8x.png";
-import six from "../Images/10x.png";
+import five from "../Images/1.png";
+import six from "../Images/2.png";
 
 
 const SampleData = [
@@ -28,14 +28,14 @@ const SampleData = [
         to: "https://blog.careerkites.com",
     },
     {
-        title:"Centrilytics",
+        title:"BrewSomeMoney",
         img:five,
-        to: "https://www.centilytics.com/",
+        to: "https://brewsomemoney.com/",
     },
     {
-        title:"Ink Feather",
+        title:"Bot.Baby",
         img:six,
-        to: "https://inkfeathers.com/",
+        to: "https://www.bot.baby/",
     },
 ];
 

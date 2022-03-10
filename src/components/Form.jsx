@@ -9,7 +9,7 @@ import axios from "axios";
 
 const Form = () => {
     
-    const [data, setData] = useState({
+    const [formVal, setData] = useState({
         Name:'',
         Email:'',
         Promotion:'',
@@ -25,14 +25,14 @@ const Form = () => {
             };
         });
     };
-    const api = '/api/Form';
+    const api = '/api/form';
     const formSubmit = (e) => {
         e.preventDefault();        
         axios({
             method: 'post',
             url: `${api}`,
             headers : {'content-type': 'application/json'},
-            data: data
+            data: formVal
         }).then(result => console.log(result.data));
         setData({
             Name:'',
@@ -61,18 +61,18 @@ const Form = () => {
                                     <img src={FormImg} alt={FormImg} width="75%" />
                                 </div>
                                 <div className="col-md-6 order-md-2 order-1 my-3 d-flex align-items-center justify-content-center">
-                                    <form onSubmit={formSubmit} method="GET" className="p-4 py-lg-5 contact-form">
+                                    <form action={formSubmit} method="post" className="p-4 py-lg-5 contact-form">
                                         <div className="mb-3">
                                             <label for="JoeLucas" className="form-label">Name</label>
-                                            <input value={data.Name} onChange={InputEvent} type="text" className="form-control" id="JoeLucas" name="Name"/>
+                                            <input value={formVal.Name} onChange={InputEvent} type="text" className="form-control" id="JoeLucas" name="Name"/>
                                         </div>
                                         <div className="mb-3">
                                             <label for="exampleInputEmail1" className="form-label">Email address</label>
-                                            <input value={data.Email} onChange={InputEvent} type="email" name="Email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                            <input value={formVal.Email} onChange={InputEvent} type="email" name="Email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                                             <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                                         </div>
                                         <div className="mb-3 form-check">
-                                            <input value={data.Promotion} onChange={InputEvent} type="checkbox" className="form-check-input" id="CheckBox" name="Promotion"/>
+                                            <input value={formVal.Promotion} onChange={InputEvent} type="checkbox" className="form-check-input" id="CheckBox" name="Promotion"/>
                                             <label className="form-check-label" for="exampleCheck1" className="checkbox">Accept Promotional Emails</label>
                                         </div>
                                         <button type="submit" className="btn-get-started mt-3 white">Submit <FontAwesomeIcon icon={faAngleDoubleRight}/> </button>
